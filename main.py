@@ -14,6 +14,7 @@ c.execute(
 )
 
 # Salinasの建物データだけを抽出し、FlatGeobufフォーマットで出力
+
 c.execute(
     """COPY (
     SELECT
