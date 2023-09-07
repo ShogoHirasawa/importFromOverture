@@ -1,6 +1,5 @@
 import duckdb
 import geopandas as gpd
-import os
 
 # DB の作成
 conn = duckdb.connect("../overture.duckdb")
