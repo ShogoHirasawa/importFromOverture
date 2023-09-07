@@ -13,7 +13,7 @@ c.execute(
 """
 )
 
-# Salinasの建物データだけを抽出
+# Salinasの建物データだけを抽出し、FlatGeobufフォーマットで出力
 c.execute(
     """COPY (
     SELECT
@@ -33,6 +33,8 @@ c.execute(
 WITH (FORMAT GDAL, DRIVER 'FlatGeobuf');
 """
 )
+
+## GeoDataFrameに変換して最初の5行だけ表示
 
 gdf = gpd.read_parquet("../buildings.fgb")
 gdf.head()
